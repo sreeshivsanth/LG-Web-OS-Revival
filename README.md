@@ -26,5 +26,5 @@ The launcher is approved; the latest master mission prioritizes Android direct c
 See [architecture](docs/architecture.md), [Android build](docs/android-remote.md),
 [protocol evidence](docs/protocol-research.md), [capabilities](protocol/capabilities.md),
 [security](docs/security.md) and [physical tests](docs/physical-test-matrix.md).
-Android connects directly to TV without Fedora or cloud. Experimental, not yet
-physically verified. Launcher and Fedora implementation follow the master phase gates.
+Android connects directly to TV without Fedora or cloud. Basic legacy pairing/navigation/audio are now physically verified by the owner.
+Touchpad and HDMI/Fire TV switching are ready for physical test. Launcher and Fedora implementation follow the master phase gates.

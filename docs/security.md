@@ -25,3 +25,11 @@ running CLI web servers on untrusted interfaces or feeding it untrusted packages
 Review upstream patched CLI compatibility in a separate toolchain change. Android
 OkHttp/Gradle dependencies require their own ongoing advisory review; no claim of
 complete exploitability assessment or zero vulnerabilities.
+
+
+Touchpad/input extension: remote requests use bounded relative values and returned
+input IDs. Input names are plain native text; returned icon URLs are not fetched.
+Settings contain no keys. Main/pointer close clears motion and requests; no stale
+commands replay on reconnect. Debug diagnostics use categories, not raw exceptions.
+Legacy transport remains physically verified but unencrypted and explicitly opt-in.
+Secure transport has an owner-reported FAIL; it is not silently downgraded.

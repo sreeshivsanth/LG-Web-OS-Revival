@@ -40,5 +40,27 @@ Pointer URLs must match the selected IP and allowed scheme/port; redirects are
 not followed. Pairing timeout 45s; command timeout 8s; connection timeout 10s.
 
 Subscription/unsubscribe framing exists in SDK evidence but is not implemented.
-Discovery, app/input APIs, text entry, playback, channels, power and Wake-on-LAN
+Discovery, app APIs, text entry, playback, channels, power and Wake-on-LAN
 remain later investigations. No public internet or device scans.
+
+
+## Touchpad and input extension
+
+The same community webos_client.py source confirms:
+- move: type:move, dx, dy, down:0, newline-delimited with blank terminator.
+- click: type:click with blank terminator; no right-button field demonstrated.
+- scroll: type:scroll, dx:0, dy, blank terminator.
+- tv/getExternalInputList returns devices with IDs; tv/switchInput takes inputId.
+No proprietary signing identity added. Registration now additionally requests
+READ_INPUT_DEVICE_LIST and CONTROL_INPUT_TV. Existing approved keys are reused;
+permission denial is reported, not worked around. Basic controls have owner-reported
+PASS results; pointer motion/click/scroll and inputs remain ready for physical test.
+
+Current input is not inferred from the last requested switch. Community get_input
+maps foreground application; that is insufficient evidence for reliable HDMI state.
+No CURRENT_INPUT integration. Right click/long press not supported in this client.
+
+TLS diagnostics distinguish TCP, timeout, identity, certificate cause, handshake and
+generic WebSocket failures without printing exception messages or TV credentials.
+Some TLS causes overlap; no TLS-version assertion without diagnostic evidence.
+No fingerprint capture, trust-on-first-use or per-TV pin enrollment is implemented.

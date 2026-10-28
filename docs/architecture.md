@@ -22,3 +22,10 @@ supersedes the previous launcher-first order and branch name.
 The existing Amazon Fire TV Stick is a first-class HDMI device. See fire-tv.md.
 LG network control, input switching, CEC and optional direct Fire TV control are
 separate capabilities and trust boundaries. Core LG controls never depend on CEC.
+
+
+Owner subsequently verified legacy pairing and all eleven basic controls. The current
+milestone extends Android with Touchpad (GestureInterpreter/MotionBuffer), Inputs,
+FireTvAssignment and redacted Diagnostics. The existing Remote transport and encrypted
+store remain. Remote sockets serialize state on one worker; gesture coalescing is
+foreground-only. TV launcher and independent Fedora client remain deferred.

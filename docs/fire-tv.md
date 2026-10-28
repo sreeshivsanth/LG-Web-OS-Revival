@@ -7,14 +7,14 @@ LG mode uses independent TV network pairing. Fire TV shortcut will select the
 configured LG HDMI input. Future Fire TV mode will be a separate optional adapter
 with its own authorization, never Developer Mode SSH or LG client-key reuse.
 
-Configuration plan: query the community LG network tv/getExternalInputList after
-basic Android physical acceptance, let the user identify the Fire TV input by its
-label and physical verification, and persist that returned input ID locally.
-Do not assume HDMI1 or silently choose an input. Input switching uses the separate
-experimental tv/switchInput capability only after permission/device validation.
-The prominent launcher tile should read “Fire TV · HDMI [configured label]” and
-say “Select input first” until configured. It switches input, not a Fire TV app.
-No implementation currently claims to perform this action.
+Android Inputs now queries tv/getExternalInputList and lets the owner designate
+one returned input as Fire TV Stick. It never assumes HDMI1/2/3 IDs. The association
+is saved locally per selected TV address. Remote's Fire TV quick action refreshes
+the list, validates that ID, then requests tv/switchInput. Missing association opens
+Inputs for assignment. A positive TV acknowledgement is required; verify picture.
+This new functionality is READY FOR PHYSICAL TEST, not physically verified.
+A future launcher tile will reuse the same capability boundary. No launcher app
+or direct Fire TV remote is implemented in this milestone.
 
 Modern streaming services should prefer the existing Fire TV when native LG
 support is absent/obsolete. Availability of each Fire TV app, account/region and
