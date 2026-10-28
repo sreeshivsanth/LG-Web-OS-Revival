@@ -4,4 +4,4 @@ Target webOS TV 4.4 using ES5 JavaScript, local assets and lightweight CSS. No f
 Run npm test and npm run build before reporting packaging readiness.
 Set CPU_FEATURES=0 and NODE_OPTIONS=--no-addons for every webOS CLI command.
 Never read, copy into Git, or print credentials. TV deployment is local and must not be claimed without evidence.
-Do not implement the launcher milestone until the owner approves it after physical Hello World testing.
+Hello webOS physical acceptance and launcher approval were provided by the owner. Follow the master phase gates: Android foundation first, then physical Android acceptance before advanced control integrations. Never claim CEC or Fire TV control is verified without hardware results.
