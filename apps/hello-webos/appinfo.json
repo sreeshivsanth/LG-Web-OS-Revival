@@ -1,0 +1,10 @@
+{
+  "id": "com.example.hellowebos",
+  "version": "1.0.0",
+  "vendor": "LG Revival Project",
+  "type": "web",
+  "main": "index.html",
+  "title": "Hello webOS",
+  "icon": "assets/icon.png",
+  "resolution": "1920x1080"
+}

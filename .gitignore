@@ -1,0 +1,10 @@
+node_modules/
+dist/*
+!dist/.gitkeep
+*.ipk
+*.pem
+*.key
+.env*
+.ssh/
+.webos/
+*.log
