@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.join(__dirname, '../apps/hello-webos');
+const info = JSON.parse(fs.readFileSync(path.join(root, 'appinfo.json')));
+assert.equal(info.id, 'com.example.hellowebos');
+assert.equal(info.version, '1.0.0');
+assert.equal(info.type, 'web');
+assert.equal(info.title, 'Hello webOS');
+for (const file of [info.main, info.icon, 'css/style.css', 'js/app.js']) assert.ok(fs.statSync(path.join(root, file)).size > 0, file);
+const icon = fs.readFileSync(path.join(root, info.icon));
+assert.equal(icon.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+assert.equal(icon.readUInt32BE(16), 80); assert.equal(icon.readUInt32BE(20), 80);
+console.log('Manifest, required assets and 80x80 PNG validated');

@@ -1,0 +1,15 @@
+{
+  "name": "lg-webos-revival",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/validate.js && node --check apps/hello-webos/js/app.js && node tests/app.test.js",
+    "build": "bash scripts/build.sh"
+  },
+  "devDependencies": {
+    "@webos-tools/cli": "3.2.6"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
