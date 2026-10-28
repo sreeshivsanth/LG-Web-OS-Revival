@@ -8,3 +8,14 @@ dist/*
 .ssh/
 .webos/
 *.log
+
+# Android and local control state
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+local-pairing*.json
+.idea/
