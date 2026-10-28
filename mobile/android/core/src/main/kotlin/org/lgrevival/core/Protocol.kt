@@ -23,7 +23,7 @@ object Protocol {
     ((u.scheme == "wss" && u.port == 3001) || (insecure && u.scheme == "ws" && u.port == 3000))
  } catch (_: Exception) { false }
  fun registration(key: String?): String {
-  val permissions = JSONArray(listOf("CONTROL_AUDIO", "CONTROL_INPUT_JOYSTICK", "CONTROL_MOUSE_AND_KEYBOARD"))
+  val permissions = JSONArray(listOf("CONTROL_AUDIO", "CONTROL_INPUT_JOYSTICK", "CONTROL_MOUSE_AND_KEYBOARD", "READ_INPUT_DEVICE_LIST", "CONTROL_INPUT_TV"))
   val payload = JSONObject().put("pairingType", "PROMPT").put("forcePairing", false)
     .put("manifest", JSONObject().put("manifestVersion", 1).put("permissions", permissions))
   if (key != null) payload.put("client-key", key)
@@ -31,5 +31,8 @@ object Protocol {
  }
  fun request(id: String, endpoint: String, payload: JSONObject = JSONObject()): String = JSONObject()
   .put("id", id).put("type", "request").put("uri", "ssap://$endpoint").put("payload", payload).toString()
+ fun move(dx:Int,dy:Int)="type:move\ndx:${dx.coerceIn(-80,80)}\ndy:${dy.coerceIn(-80,80)}\ndown:0\n\n"
+ fun click()="type:click\n\n"
+ fun scroll(delta:Int)="type:scroll\ndx:0\ndy:${delta.coerceIn(-10,10)}\n\n"
  fun button(command: Command): String { require(command.button != null); return "type:button\nname:${command.button}\n\n" }
 }
